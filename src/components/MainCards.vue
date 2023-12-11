@@ -4,11 +4,11 @@
   import MainCardsSingle from '@/components/MainCardSingle.vue'
   import MainSearch from '@/components/MainSearch.vue'
   
-  const { demons } = useAPI()
+  const { vehicles } = useAPI()
   const search = ref('');
 
   const filteredList = computed(() => {
-  return demons.value.filter(demon =>
+  return vehicles.value.filter(demon =>
     demon.name.toLowerCase().includes(search.value.toLowerCase())
   );
 });
@@ -19,7 +19,7 @@
 <template>
   <input type="text" placeholder="Search..." class="search" v-model="search" />
 
-  <div class="sub-wrapper" v-if="demons">
+  <div class="sub-wrapper" v-if="vehicles">
 
     <Suspense>
 
