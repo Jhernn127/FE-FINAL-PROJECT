@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const demons = ref([])
+const vehicles = ref([])
 const pages = ref(1)
 const loading = ref(false)
 const activePage = ref(1)
@@ -16,27 +16,22 @@ const api = axios.create({
   },
 })
 
-const getDemons = async () => {
+const getVehicles = async () => {
   loading.value = true
-  const { data, headers } = await api.get('/api/demons', {
+  const { data, headers } = await api.get('/api/vehicles', {
     params: {
       page: activePage.value,
       size: pageSize.value,
     },
   })
-  demons.value = data
+  vehicles.value = data
   pages.value = Number(headers['x-total-pages']) || 1
   loading.value = false
 }
 
-const fetchDemon = async (id) => {
-    const { data } = await api.get(`/api/demons/${id}`)
-    currentDemon.value = data
-    console.log(data)
-  }
 
 const useAPI = () => {
-  return { demons, pages, activePage, loading, pageSize, getDemons, fetchDemon, currentDemon}
+  return { vehicles, pages, activePage, loading, pageSize, getVehicles}
 }
 
 export default useAPI
