@@ -3,38 +3,41 @@
   import { faker } from '@faker-js/faker'
 
   import useAPI from '@/composables/useAPI'
-  //const { getDemons } = useAPI()
+  //const { getVehicles } = useAPI()
 
   const selectCard = () => {
-    console.log(`${props.demon.name} selected`)
+    console.log(`${props.vehicle.make} selected`)
   }
 
   const props = defineProps({
-    demon: {
+    vehicle: {
       type: Object,
       required: true,
       default: () => {
         return {
-          demonId: '123',
-          name: 'John Doe',
+          vehicleId: '123',
+          make: 'John Doe',
+          model: 'A55',
+          year: '2007',
+          color: 'White',
           image: 'https://www.example.com'
         }
       },
     },
   })
 
-  //const departmentResponse = await getDepartment(props.demon.departmentId)
+  //const departmentResponse = await getDepartment(props.vehicle.departmentId)
   //const department = ref(departmentResponse)
 </script>
 
 <template>
-  <RouterLink v-if="props.demon.demonId" :to="`/api/demons/${props.demon.demonId}`">
+  <RouterLink v-if="props.vehicle.vehicleId" :to="`/api/vehicles/${props.vehicle.vehicleId}`">
   <div class="card" @click="selectCard">
     <div class="card-image">
-      <img :src="props.demon.image" alt="" srcset="" />
+      <img :src="props.vehicle.image" alt="" srcset="" />
     </div>
     <div class="card-details">
-      <p class="card-details-name font-poppins">{{ props.demon.name }}</p>
+      <p class="card-details-make font-poppins">{{ props.vehicle.make }}</p>
 
     </div>
   </div>
@@ -51,7 +54,7 @@
     }
     &-details {
       @apply flex flex-col gap-2  pt-6 text-center;
-      &-name {
+      &-make {
         @apply text-4xl  text-black;
       }
       &-job {

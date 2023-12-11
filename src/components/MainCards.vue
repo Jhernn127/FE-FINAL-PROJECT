@@ -8,8 +8,8 @@
   const search = ref('');
 
   const filteredList = computed(() => {
-  return vehicles.value.filter(demon =>
-    demon.name.toLowerCase().includes(search.value.toLowerCase())
+  return vehicles.value.filter(vehicle =>
+    vehicle.make.toLowerCase().includes(search.value.toLowerCase())
   );
 });
 
@@ -23,7 +23,7 @@
 
     <Suspense>
 
-      <MainCardsSingle v-for="demon in filteredList" :key="demon.demonId" :demon="demon" />
+      <MainCardsSingle v-for="vehicle in filteredList" :key="vehicle.vehicleId" :vehicle="vehicle" />
       <template #fallback>
         <div>Loading...</div>
       </template>
