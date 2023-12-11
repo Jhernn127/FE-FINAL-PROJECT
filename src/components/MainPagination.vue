@@ -1,23 +1,23 @@
 <script setup>
   import useAPI from '@/composables/useAPI'
 
-  const { activePage, pages, getDemons } = useAPI()
+  const { activePage, pages, getVehicles } = useAPI()
 
   const prevPage = async () => {
     if (activePage.value > 1) {
       activePage.value--
-      await getDemons()
+      await getVehicles()
     }
   }
   const nextPage = async () => {
     if (activePage.value < pages.value) {
       activePage.value++
-      await getDemons()
+      await getVehicles()
     }
   }
   const jumpPage = async (page) => {
     activePage.value = page
-    await getDemons()
+    await getVehicles()
   }
 </script>
 
