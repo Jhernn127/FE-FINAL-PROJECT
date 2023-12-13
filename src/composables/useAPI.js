@@ -29,9 +29,13 @@ const getVehicles = async () => {
   loading.value = false
 }
 
-
+const fetchVehicle = async (id) => {
+  const { data } = await api.get(`/api/vehicles/${id}`)
+  currentVehicle.value = data
+  console.log(data)
+}
 const useAPI = () => {
-  return { vehicles, pages, activePage, loading, pageSize, getVehicles}
+  return { vehicles, pages, activePage, loading, pageSize, getVehicles, fetchVehicle, currentVehicle}
 }
 
 export default useAPI

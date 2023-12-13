@@ -11,21 +11,21 @@ const api = axios.create({
 })
 
 
-const demonName = ref('')
-const demonImage = ref('')
+const vehicleName = ref('')
+const vehicleImage = ref('')
   
-const addDemon = async () => {
-  const { data } = await api.post('/api/demons', {
-    name: demonName.value,
-    image: demonImage.value
+const addVehicle = async () => {
+  const { data } = await api.post('/api/vehicles', {
+    name: vehicleName.value,
+    image: vehicleImage.value
   })
 }
 </script>
 
 <template>
-  <form class="login-form" @submit.prevent="addDemon">
-    <input v-model="demonName" type="text" placeholder="name" />
-    <input v-model="demonImage" type="text" placeholder="image" />
+  <form class="login-form" @submit.prevent="addVehicle">
+    <input v-model="vehicleName" type="text" placeholder="name" />
+    <input v-model="vehicleImage" type="text" placeholder="image" />
     <button type="submit" class="bg-green-500 px-4 py-2">submit</button>
   </form>
 </template>

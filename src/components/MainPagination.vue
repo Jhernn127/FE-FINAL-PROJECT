@@ -46,8 +46,9 @@
     .page {
       @apply rounded-md bg-slate-100 p-2 font-medium text-slate-700 shadow-md hover:bg-slate-200;
       &.active {
-        @apply bg-yellow-700 text-slate-100 hover:bg-yellow-600;
+        @apply bg-gray-900 text-slate-100 hover:bg-gray-600;
       }
     }
   }
 </style>
+

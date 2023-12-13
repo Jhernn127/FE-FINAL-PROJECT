@@ -37,7 +37,7 @@
       <img :src="props.vehicle.image" alt="" srcset="" />
     </div>
     <div class="card-details">
-      <p class="card-details-make font-poppins">{{ props.vehicle.make }}</p>
+      <p class="card-details-make font-preahvihear" font-bold>{{ props.vehicle.make }}</p>
 
     </div>
   </div>
@@ -54,8 +54,8 @@
     }
     &-details {
       @apply flex flex-col gap-2  pt-6 text-center;
-      &-make {
-        @apply text-4xl  text-black;
+      &-name {
+        @apply text-4xl  text-black ;
       }
       &-job {
         @apply -mt-2 text-xs font-bold text-yellow-700;

@@ -13,7 +13,7 @@ const routes = [
   { path: '/settings', name: 'Settings', component: SettingsPage, meta: {requiresAuth: true} },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
   { path: '/other', name: 'Other', component: () => import('@/views/OtherPage.vue') },
-  { path: '/api/demons/:id', name: 'Demon', component: () => import('@/views/DemonPage.vue')},
+  { path: '/api/vehicles/:id', name: 'Vehicle', component: () => import('@/views/VehiclePage.vue')},
 ]
 
 const router = createRouter({

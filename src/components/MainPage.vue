@@ -28,3 +28,4 @@
     @apply container mx-auto flex flex-col gap-4 py-4;
   }
 </style>
+
